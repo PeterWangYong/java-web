@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>FirstServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 声明Servlet -->
+  <servlet>
+  <!-- servlet的别名 -->
+    <servlet-name>first</servlet-name>
+    <servlet-class>com.imooc.servlet.FirstServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>sample</servlet-name>
+  	<servlet-class>com.imooc.servlet.SampleServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>requestMethod</servlet-name>
+  	<servlet-class>com.imooc.servlet.RequestMethodServlet</servlet-class>
+  </servlet>
+  
+  <!-- 将Servlet与URL绑定 -->
+  <!-- 一般来说web程序需要一个视图函数和路由，servlet中对应的视图函数是class中的service方法，路由是这里的mapping -->
+  <!-- http://localhost:8080/FirstServlet/hi?name=peter -->
+  <servlet-mapping>
+  	<servlet-name>first</servlet-name>
+  	<url-pattern>/hi</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>sample</servlet-name>
+    <url-pattern>/sample</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>requestMethod</servlet-name>
+    <url-pattern>/request_method</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>
