@@ -1,0 +1,20 @@
+CREATE DATABASE mydb;
+USE mydb;
+
+CREATE table users(
+	id INT PRIMARY KEY AUTO_INCREMENT COMMENT '用户编号',
+	username VARCHAR(50) NOT NULL COMMENT '登录账号',
+	userpass VARCHAR(50) NOT NULL COMMENT '登录密码',
+	nickname VARCHAR(50) COMMENT '昵称',
+	age INT COMMENT '用户年龄',
+	gender VARCHAR(5) COMMENT '用户性别',
+	phone VARCHAR(13) COMMENT '联系方式',
+	email VARCHAR(20) COMMENT '用户邮箱',
+	createTime DATETIME COMMENT '账号创建时间',
+	updateTime DATETIME COMMENT '账号最后修改时间',
+	lastLogin DATETIME COMMENT '账号最后一次登录时间',
+	userStatus INT COMMENT '用户账号的状态 0 正常 1 锁定 2 删除',
+	remark TEXT COMMENT '备注'
+);
+
+SELECT * FROM users;
